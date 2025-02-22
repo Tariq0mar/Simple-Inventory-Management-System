@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Simple-Inventory-Management-System\\SimpleInventoryManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D30AF24F-8622-4451-81E6-56743315F728}|SimpleInventoryManagementSystem.csproj|d:\\simple-inventory-management-system\\simpleinventorymanagementsystem\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D30AF24F-8622-4451-81E6-56743315F728}|SimpleInventoryManagementSystem.csproj|solutionrelative:product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D30AF24F-8622-4451-81E6-56743315F728}|SimpleInventoryManagementSystem.csproj|d:\\simple-inventory-management-system\\simpleinventorymanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D30AF24F-8622-4451-81E6-56743315F728}|SimpleInventoryManagementSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D30AF24F-8622-4451-81E6-56743315F728}|SimpleInventoryManagementSystem.csproj|d:\\simple-inventory-management-system\\simpleinventorymanagementsystem\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D30AF24F-8622-4451-81E6-56743315F728}|SimpleInventoryManagementSystem.csproj|solutionrelative:inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D30AF24F-8622-4451-81E6-56743315F728}|SimpleInventoryManagementSystem.csproj|d:\\simple-inventory-management-system\\simpleinventorymanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D30AF24F-8622-4451-81E6-56743315F728}|SimpleInventoryManagementSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D30AF24F-8622-4451-81E6-56743315F728}|SimpleInventoryManagementSystem.csproj|d:\\simple-inventory-management-system\\simpleinventorymanagementsystem\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D30AF24F-8622-4451-81E6-56743315F728}|SimpleInventoryManagementSystem.csproj|solutionrelative:product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,12 +27,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Simple-Inventory-Management-System\\SimpleInventoryManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Simple-Inventory-Management-System\\SimpleInventoryManagementSystem\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T11:44:13.801Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\Simple-Inventory-Management-System\\SimpleInventoryManagementSystem\\Product.cs",
               "RelativeDocumentMoniker": "Product.cs",
               "ToolTip": "D:\\Simple-Inventory-Management-System\\SimpleInventoryManagementSystem\\Product.cs",
               "RelativeToolTip": "Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-22T11:51:24.607Z",
               "EditorCaption": ""
@@ -45,22 +59,9 @@
               "RelativeDocumentMoniker": "Inventory.cs",
               "ToolTip": "D:\\Simple-Inventory-Management-System\\SimpleInventoryManagementSystem\\Inventory.cs",
               "RelativeToolTip": "Inventory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-22T11:51:21.516Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Simple-Inventory-Management-System\\SimpleInventoryManagementSystem\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Simple-Inventory-Management-System\\SimpleInventoryManagementSystem\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAADwvwoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-22T11:44:13.801Z",
               "EditorCaption": ""
             }
           ]
