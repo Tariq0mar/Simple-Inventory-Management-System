@@ -1,60 +1,37 @@
 ﻿
 using System;
-using ISimpleInventoryManagementSystem;
+using SimpleInventoryManagementSystem;
 
-namespace ISimpleInventoryManagementSystem
+
+namespace SimpleInventoryManagementSystem;
+public class Inventory
 {
-    public class Inventory
+    private List<Product> _products;
+    private const string _currency="$";
+    private InputLogger _input;
+
+    public Inventory(ICollection<Product> products)
     {
-        private List<Product> _products;
-        private string _currency="$";
+        _products = (List<Product>) products;
+        _input = new InputLogger();
+    }
 
-        public Inventory()
+    public  void AddProduct()
+    {
+        Product product=_input.ProductInput();
+        _products.Add(product);
+    }
+
+    public void ViewProducts()
+    {
+        Console.WriteLine("The menu of products : ");
+        foreach (Product product in _products)
         {
-            _products = new List<Product>();
+            Console.WriteLine($"Name is : {product._name}, Price is: {product._price} {_currency}, Quantity is: {product._quantity}");
         }
 
-        public  void AddProduct()
-        {
-
-            string input = "";
-            Console.WriteLine("Adding new product to the inventory");
-
-            Console.WriteLine("Enter name of the product");
-            input = Console.ReadLine();
-            string name = input;
-
-            Console.WriteLine("Enter price of the product");
-            input = Console.ReadLine();
-            float.TryParse(input, out float price);
-
-            Console.WriteLine("Enter quantity of the product");
-            input = Console.ReadLine();
-            int.TryParse(input, out int quantity);
-
-            Console.WriteLine("==========================");
-
-            AddProduct1(name, price, quantity);
-        }
-        public void AddProduct1(string name, float price, int quantity)
-        {
-            Product newProduct = new Product(name, price, quantity);
-
-            _products.Add(newProduct);
-        }
-
-
-        public void Display()
-        {
-            Console.WriteLine("The menu of products : ");
-            foreach (Product product in _products)
-            {
-                Console.WriteLine($"Name is : {product.Name}, Price is: {product.Price} {_currency}, Quantity is: {product.Quantity}");
-            }
-
-            Console.WriteLine("==========================");
-
-        }
+        Console.WriteLine("==========================");
 
     }
+
 }
