@@ -1,15 +1,14 @@
-﻿
+﻿using System;
 using SimpleInventoryManagementSystem;
-using System;
 
 namespace SimpleInventoryManagementSystem;
 
 public class Program
 {
     enum Services{
-        Exit,
-        AddProduct,
-        ViewProducts
+        Exit = 0,
+        AddProduct = 1,
+        ViewProducts = 2
     }
 
     public static void PrintServices()
@@ -20,6 +19,7 @@ public class Program
             Console.WriteLine($"{service} is {(int)service}");
         }
     }
+
     public static void Main(string[] args)
     {
         Inventory inventory = new Inventory(new List<Product>());

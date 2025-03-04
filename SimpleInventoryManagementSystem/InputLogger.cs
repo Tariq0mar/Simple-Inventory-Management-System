@@ -1,47 +1,61 @@
 ﻿using System;
 using SimpleInventoryManagementSystem;
 
-
 namespace SimpleInventoryManagementSystem;
 
 public class InputLogger
 {
-    ProductFactory _productFactory;
+    private readonly ProductFactory _productFactory = new ProductFactory();
 
-    public InputLogger()
+    public string TryGetInput(string inputName)
     {
-        _productFactory = new ProductFactory();
+        string input;
+        Console.WriteLine($"Please enter value of {inputName}:");
+        do
+        {
+            input = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                Console.WriteLine($"Invalid value for {inputName}, please try again.");
+            }
+        } while (string.IsNullOrWhiteSpace(input));
+
+        return input;
+    }
+
+    public T TryGetInput<T>(Func<string, T> inputParser, string inputName, Func<T, bool> check)
+    {
+        while (true) 
+        {
+            string input = TryGetInput(inputName);
+            try
+            {
+                var value = inputParser(input);
+                if (check(value))
+                {
+                    return value;
+                }
+                else
+                {
+                    Console.WriteLine($"Invalid value for {inputName}, please try again.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}. Please enter a valid {inputName}.");
+            }
+        }
     }
 
     public Product ProductInput()
     {
-        var input = string.Empty;
-
         Console.WriteLine("Adding new product to the inventory");
 
-        Console.WriteLine("Enter name of the product");
-        input = Console.ReadLine();
-        if(input is null)
-        {
-            throw new ArgumentException("invalid input");
-        }
-        var name = input;
+        string name = TryGetInput("name");
+        float price = TryGetInput(float.Parse, "price", (float x) => x > 0);
+        int quantity = TryGetInput(int.Parse, "quantity", (int x) => x >= 0);
 
-        Console.WriteLine("Enter price of the product");
-        input = Console.ReadLine();
-        if(!float.TryParse(input, out float price))
-        {
-            throw new ArgumentException("invalid input");
-        }
-
-        Console.WriteLine("Enter quantity of the product");
-        input = Console.ReadLine();
-        if(!int.TryParse(input, out int quantity))
-        {
-            throw new ArgumentException("invalid input");
-        }
-
-
-        return _productFactory.CreateProduct(name, price, quantity);
+        Product product = _productFactory.CreateProduct(name, price, quantity);
+        return product;
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using SimpleInventoryManagementSystem;
 
-
 namespace SimpleInventoryManagementSystem;
 
 class ProductFactory
