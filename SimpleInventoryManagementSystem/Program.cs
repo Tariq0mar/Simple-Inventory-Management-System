@@ -5,7 +5,8 @@ namespace SimpleInventoryManagementSystem;
 
 public class Program
 {
-    enum Services{
+    enum Services
+    {
         Exit = 0,
         AddProduct = 1,
         ViewProducts = 2
@@ -14,7 +15,7 @@ public class Program
     public static void PrintServices()
     {
         Console.WriteLine("Choose The number of service you want from our menu bellow");
-        foreach (Services service in Enum.GetValues(typeof(Services)))
+        foreach (var service in Enum.GetValues(typeof(Services)))
         {
             Console.WriteLine($"{service} is {(int)service}");
         }
@@ -22,40 +23,36 @@ public class Program
 
     public static void Main(string[] args)
     {
-        Inventory inventory = new Inventory(new List<Product>());
+        var inventory = new Inventory(new List<Product>());
 
         while (true)
         {
             PrintServices();
 
             var input = Console.ReadLine();
-            if (!int.TryParse(input,out int number))
+            if (!Enum.TryParse<Services>(input, out var option))
             {
-                throw new ArgumentException("invalid input");
+                Console.WriteLine("Invalid input. Please try again");
+                continue;
             }
 
-            switch (number)
+            switch (option)
             {
-                case 0:
+                case Services.Exit:
                     Console.WriteLine("Goodbye, have a nice day!");
-                    break;
+                    return;
 
-                case 1:
+                case Services.AddProduct:
                     inventory.AddProduct();
                     break;
 
-                case 2:
+                case Services.ViewProducts:
                     inventory.ViewProducts();
                     break;
 
                 default:
                     Console.WriteLine("Unfound service, try again");
                     break;
-            }
-
-            if (number == 0)
-            {
-                break;
             }
         }
     }
