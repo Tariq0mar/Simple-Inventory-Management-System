@@ -11,10 +11,10 @@ public class Inventory
 
     public Inventory(ICollection<Product> products)
     {
-        _products = (List<Product>) products;
+        _products = (List<Product>)products;
     }
 
-    public  void AddProduct()
+    public void AddProduct()
     {
         Product product = _input.ProductInput();
         _products.Add(product);

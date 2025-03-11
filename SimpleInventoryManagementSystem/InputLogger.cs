@@ -5,9 +5,7 @@ namespace SimpleInventoryManagementSystem;
 
 public class InputLogger
 {
-    private readonly ProductFactory _productFactory = new ProductFactory();
-
-    public string TryGetInput(string inputName)
+    private string TryGetInput(string inputName)
     {
         string input;
         Console.WriteLine($"Please enter value of {inputName}:");
@@ -23,9 +21,9 @@ public class InputLogger
         return input;
     }
 
-    public T TryGetInput<T>(Func<string, T> inputParser, string inputName, Func<T, bool> check)
+    private T TryGetInput<T>(Func<string, T> inputParser, string inputName, Func<T, bool> check)
     {
-        while (true) 
+        while (true)
         {
             string input = TryGetInput(inputName);
             try
@@ -55,7 +53,7 @@ public class InputLogger
         float price = TryGetInput(float.Parse, "price", (float x) => x > 0);
         int quantity = TryGetInput(int.Parse, "quantity", (int x) => x >= 0);
 
-        Product product = _productFactory.CreateProduct(name, price, quantity);
+        Product product = new Product(name, price, quantity);
         return product;
     }
 }
