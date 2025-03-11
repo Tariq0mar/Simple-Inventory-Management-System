@@ -1,33 +1,29 @@
-﻿using System;
-using SimpleInventoryManagementSystem;
-
-namespace SimpleInventoryManagementSystem;
+﻿using SimpleInventoryManagementSystem;
 
 public class Inventory
 {
-    private List<Product> _products;
-    private const string _currency = "$";
-    private readonly InputLogger _input = new InputLogger();
+    private List<Product> products;
+    private const string Currency = "$";
+    private readonly InputLogger input = new InputLogger();
 
     public Inventory(ICollection<Product> products)
     {
-        _products = (List<Product>)products;
+        this.products = products.ToList();
     }
 
     public void AddProduct()
     {
-        Product product = _input.ProductInput();
-        _products.Add(product);
+        Product product = input.ProductInput();
+        products.Add(product);
     }
 
     public void ViewProducts()
     {
-        Console.WriteLine("The menu of products : ");
-        foreach (var product in _products)
+        Console.WriteLine("The menu of products:");
+        foreach (var product in products)
         {
-            Console.WriteLine($"Name is : {product._name}, Price is: {product._price} {_currency}, Quantity is: {product._quantity}");
+            Console.WriteLine($"Name: {product.Name}, Price: {product.Price} {Currency}, Quantity: {product.Quantity}");
         }
         Console.WriteLine("==========================");
     }
-
 }
