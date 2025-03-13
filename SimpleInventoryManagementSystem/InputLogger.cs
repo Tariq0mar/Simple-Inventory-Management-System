@@ -53,7 +53,7 @@ public class InputLogger
         float price = TryGetInput(float.Parse, "price", (float x) => x > 0);
         int quantity = TryGetInput(int.Parse, "quantity", (int x) => x >= 0);
 
-        Product product = new Product(name, price, quantity);
+        var product = new Product(name, price, quantity);
         return product;
     }
 }
